@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <hr>
+        <h3><%= livro[0].titulo %></h3>
+        <hr>
+        <form method="post" action="/salvarUsuario">
+            <h5>Emprestado para: </h5>
+            <label>Nome: </label>
+            <input type="text" class="form-control" placeholder="Digite o nome para quem está sendo emprestado" name="nome">
+            <br>
+            <input type="hidden" name="numeroLivro" value="<%= livro[0].numero %>">
+            <button type="submit" class="btn btn-dark">Retirar livro</button>
+        </form>
+    </div>
+</body>
+<%- include('partials/footer') %>

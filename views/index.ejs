@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <hr>
+        <h1>Livros</h1>
+        <hr>
+        <a href="/doarLivro" class="btn btn-dark">Doar um Livro</a>
+        <hr>
+        <% livros.forEach((livro, index) => { %>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <p><strong>Número:</strong> <%= livro.numero %></p>
+                    <p><strong>Titulo:</strong> <%= livro.titulo %></p>
+                    <p><strong>Autor:</strong> <%= livro.autor %></p>
+                    <p><strong>Ano:</strong> <%= livro.ano %></p>
+                    <p><strong>Status:</strong> <%= livro.status %></p>
+                    <p><strong>Emprestado para:</strong> <%= livro.emprestadoPara %></p>
+                </div>
+                <div class="card-footer">
+                    <a href="livro/<%= livro.numero %>"><button class="btn btn-dark">Retirar livro</button></a>
+                    <a href="/devolver/<%= livro.numero %>"><button class="btn btn-danger">Devolver livro</button></a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %>

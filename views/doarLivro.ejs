@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <div class="card" id="formulario-cadastro">
+            <div class="card-header">
+                <h3>Doar um Livro</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="/salvarLivro">
+                    <label>Título:</label>
+                    <input type="text" placeholder="Título" class="form-control" name="titulo" required>
+                    <label>Autor:</label>
+                    <input type="text" placeholder="Autor" class="form-control" name="autor" required>
+                    <label>Ano:</label>
+                    <input type="text" placeholder="Ano" class="form-control" name="ano" required>
+                    <br>
+                    <button class="btn btn-dark">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('partials/footer.ejs') %>

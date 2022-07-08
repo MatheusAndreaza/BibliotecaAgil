@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <hr>
+        <h3><%= livro[0].titulo %></h3>
+        <hr>
+        <form method="post" action="/devolverLivro">
+            <input type="hidden" name="numeroLivro" value="<%= livro[0].numero %>">
+            <button type="submit" class="btn btn-danger">Devolver livro</button>
+        </form>
+    </div>
+</body>
+<%- include('partials/footer') %>
